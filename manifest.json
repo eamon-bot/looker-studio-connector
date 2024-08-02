@@ -1,0 +1,14 @@
+{
+  "dataStudio": {
+    "name": "Custom Gantt Chart",
+    "company": "Your Company",
+    "logoUrl": "https://example.com/logo.png",
+    "components": [
+      {
+        "id": "custom-gantt-chart",
+        "script": "https://username.github.io/repository/index.js",
+        "html": "https://username.github.io/repository/index.html"
+      }
+    ]
+  }
+}
