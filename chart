@@ -1,0 +1,14 @@
+{
+  "dataStudio": {
+    "name": "Custom Gantt Chart",
+    "company": "Your Company",
+    "logoUrl": "https://example.com/logo.png",
+    "components": [
+      {
+        "id": "custom-gantt-chart",
+        "script": "https://eamon-bot.github.io/looker-studio-connector/index.js",
+        "html": "https://eamon-bot.github.io/looker-studio-connector/index.html"
+      }
+    ]
+  }
+}
