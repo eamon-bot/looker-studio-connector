@@ -6,8 +6,8 @@
     "components": [
       {
         "id": "custom-gantt-chart",
-        "script": "https://username.github.io/repository/index.js",
-        "html": "https://username.github.io/repository/index.html"
+        "script": "https://eamon-bot.github.io/looker-studio-connector/index.js",
+        "html": "https://eamon-bot.github.io/looker-studio-connector/index.html"
       }
     ]
   }
