@@ -1,12 +1,25 @@
 {
-  "dataStudio": {
-    "name": "Custom Gantt Chart",
-    "components": [
-      {
-        "id": "custom-gantt-chart",
-        "script": "https://eamon-bot.github.io/looker-studio-connector/index.js",
-        "html": "https://eamon-bot.github.io/looker-studio-connector/index.html"
+  "name": "Custom Gantt Chart",
+  "logoUrl": "https://eamon-bot.github.io/looker-studio-connector/logo.png",
+  "organization": "Your Organization Name",
+  "description": "A custom Gantt chart visualization for Looker Studio",
+  "organizationUrl": "https://your-organization-website.com",
+  "supportUrl": "https://your-support-page.com",
+  "privacyPolicyUrl": "https://your-privacy-policy.com",
+  "termsOfServiceUrl": "https://your-terms-of-service.com",
+  "packageUrl": "https://eamon-bot.github.io/looker-studio-connector",
+  "devMode": true,
+  "components": [
+    {
+      "id": "customGanttChart",
+      "name": "Custom Gantt Chart",
+      "iconUrl": "https://eamon-bot.github.io/looker-studio-connector/icon.png",
+      "description": "A customizable Gantt chart visualization",
+      "resource": {
+        "js": "https://eamon-bot.github.io/looker-studio-connector/index.js",
+        "config": "https://eamon-bot.github.io/looker-studio-connector/config.json",
+        "css": "https://eamon-bot.github.io/looker-studio-connector/index.css"
       }
-    ]
-  }
+    }
+  ]
 }
