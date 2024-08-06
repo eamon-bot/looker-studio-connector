@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task Timeline</title>
+    <style>
+      #legend_div {
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+      }
+      #legend_div h2 {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+      }
+      #legend_div ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      #legend_div li {
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+      }
+      #legend_div span {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+      }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 100%; height: 800px;"></div>
+    <div id="legend_div"></div>
+    <?!= include('index_js.html'); ?>
+  </body>
+</html>
