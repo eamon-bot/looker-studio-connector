@@ -1,0 +1,12 @@
+{
+  "dataStudio": {
+    "name": "Custom Gantt Chart",
+    "components": [
+      {
+        "id": "customGanttChart",
+        "script": "https://eamon-bot.github.io/looker-studio-connector/index.js",
+        "html": "https://eamon-bot.github.io/looker-studio-connector/index.html"
+      }
+    ]
+  }
+}
