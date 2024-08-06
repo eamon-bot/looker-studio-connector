@@ -2,7 +2,19 @@ google.charts.load('current', {packages:['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
-  google.script.run.withSuccessHandler(drawScatterChart).getSheetData();
+  var data = getSheetData(); // Simulated data fetching
+  drawScatterChart(data);
+}
+
+function getSheetData() {
+  // Simulated data for demonstration purposes
+  return [
+    ['Team', 'Month', 'Tooltip', 'Style', 'End Month', 'Team'],
+    ['ESC', -40, 'Task: A<br>Team: ESC<br>Phase: Campus Planning<br>Duration: 2 months<br>Start: -40<br>End: -38', 'color: blue;', -38, 'ESC'],
+    ['FEP', -36, 'Task: B<br>Team: FEP<br>Phase: IFC<br>Duration: 1 month<br>Start: -36<br>End: -35', 'color: green;', -35, 'FEP'],
+    ['DCC', -28, 'Task: C<br>Team: DCC<br>Phase: Draft IFC<br>Duration: 4 months<br>Start: -28<br>End: -24', 'color: cyan;', -24, 'DCC'],
+    // Add more rows as needed for testing
+  ];
 }
 
 function drawScatterChart(data) {
@@ -37,38 +49,16 @@ function drawScatterChart(data) {
   for (var i = 1; i < data.length; i++) {
     var row = data[i];
     var team = row[0];
-    var phase = row[1];
-    var taskName = row[2];
-    var startMonth = parseInt(row[4]);
-    var endMonth = parseInt(row[5]);
-    var narrative = row[3];
-    var collaborationPartner = row[6];
-    var predecessor = row[7];
-
-    var tooltip = '<div style="padding:5px;"><strong>Task Name:</strong> ' + taskName + '<br>' +
-                  '<strong>Narrative:</strong> ' + (narrative || 'N/A') + '<br>' +
-                  '<strong>Start Month:</strong> ' + startMonth + '<br>' +
-                  '<strong>End Month:</strong> ' + endMonth + '<br>' +
-                  '<strong>Collaboration Partner:</strong> ' + (collaborationPartner || 'N/A') + '<br>' +
-                  '<strong>Predecessor:</strong> ' + (predecessor || 'N/A') + '</div>';
-    
-    var color = colors[phase] || 'color: gray;';
+    var month = row[1];
+    var tooltip = row[2];
+    var style = row[3];
+    var endMonth = row[4];
     var teamValue = teamMapping[team];
-
+    
     dataTable.addRows([
-      [startMonth, teamValue, tooltip, color, endMonth, teamValue]
+      [month, teamValue, tooltip, style, endMonth, teamValue]
     ]);
   }
-
-  // Add rows for all teams to ensure they appear on the y-axis
-  for (var team in teamMapping) {
-    dataTable.addRows([
-      [null, teamMapping[team], null, null, null, teamMapping[team]]
-    ]);
-  }
-
-  var view = new google.visualization.DataView(dataTable);
-  view.setColumns([0, 1, 2, 3]);
 
   var options = {
     title: 'Task Timeline',
@@ -90,7 +80,7 @@ function drawScatterChart(data) {
   };
 
   var chart = new google.visualization.ScatterChart(container);
-  chart.draw(view, options);
+  chart.draw(dataTable, options);
 
   // Create and populate the legend
   var legendContainer = document.getElementById('legend_div');
@@ -104,3 +94,4 @@ function drawScatterChart(data) {
   legendHTML += '</ul>';
   legendContainer.innerHTML = legendHTML;
 }
+
